@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dicee 3.0</title>
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&family=Playwrite+AR:wght@100..400&family=Ubuntu&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <!-- Rules -->
+      <div class="rules">
+         <h1 class="heading">Roll your Luck!</h1>
+         <h3 class="rules-heading">Scoring Rules</h3>
+         <div class="rules-list">
+            <p class="rules-item">1. Player will win if he gets higher points.</p>
+            <p class="rules-item">
+               2. Winner Player Score = Winner Player Score + (Winner Player Score - Lost Player
+               Score)
+            </p>
+         </div>
+         <p class="rules-heading">Double Roll Round Scoring System</p>
+         <p class="rules-item">
+            If one player rolls a '1' and another player rolls a '6', then no one gets any points
+            for that round. However, the next round will be a Double Roll Round, or simply a DR
+            Round. In this round, the winning player will earn double points (2x). If the roll
+            results in '1' and '6' again during this round, the following two rounds will be DR
+            Rounds, and so on.
+         </p>
+         <button class="btn btn-return">Return</button>
+      </div>
+      <!-- End of Rules -->
+
+      <!-- Game -->
+      <div class="game">
+         <h1 class="heading game-heading">Roll the Dicee!</h1>
+
+         <div class="players">
+            <div class="player-card player-card-1">
+               <div class="player-card-header">
+                  <h3 class="player-name player-name-1">Player</h3>
+                  <p class="emoji player-emoji">🙄</p>
+               </div>
+               <p class="score score-player">Score</p>
+               <img src="images/6.png" class="cube cube-1" />
+               <div class="name-input-container">
+                  <input
+                     type="text"
+                     class="player-name-input player-name-input-1"
+                     placeholder="Set Name"
+                  />
+                  <button class="btn-set-name btn-set-name-1">Set</button>
+               </div>
+            </div>
+
+            <div class="player-card player-card-2">
+               <div class="player-card-header">
+                  <h3 class="player-name player-name-2">Bot</h3>
+                  <p class="emoji player-emoji">🙄</p>
+               </div>
+               <p class="score score-bot">Score</p>
+               <img src="images/6.png" class="cube cube-2" />
+               <div class="name-input-container">
+                  <input
+                     type="text"
+                     class="player-name-input player-name-input-2"
+                     placeholder="Set Name"
+                  />
+                  <button class="btn-set-name btn-set-name-2">Set</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="game-btns">
+            <button class="btn btn-1" title="One by One Roll">Roll</button>
+            <button class="btn btn-1000" title="1000th Roll at Once">1000th Roll</button>
+            <button class="btn btn-RN" title="Random Times Roll">RN Roll</button>
+         </div>
+
+         <p class="count-paragraph">Roll Count: <span class="count">0</span></p>
+
+         <button class="btn btn-rules">Rules</button>
+
+         <p class="footer">
+            Created by
+            <a href="https://www.facebook.com/profile.php?id=100081337193100" target="_blank"
+               >Shihab</a
+            ><span>😎</span>
+         </p>
+      </div>
+      <!-- End of Game -->
+
+      <script src="index.js"></script>
+   </body>
+</html>
