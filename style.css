@@ -221,3 +221,15 @@ body {
    margin-left: 0.2rem;
 }
 /* End of Game */
+
+@media (width<800px) {
+   .heading {
+      font-size: 2.5rem;
+   }
+}
+
+@media (width<600px) {
+   .heading {
+      font-size: 2rem;
+   }
+}
