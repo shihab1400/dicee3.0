@@ -64,21 +64,24 @@ btnReturn.addEventListener("click", function () {
 
 btn1.addEventListener("click", function () {
    btn = 0;
+   disablingFunc();
    roll();
 });
 
 btn1000.addEventListener("click", function () {
    btn = 1;
+   disablingFunc();
    myInterval = setInterval(roll, 1);
 });
 
 btnRN.addEventListener("click", function () {
    btn = 2;
+   disablingFunc();
    rnRand = count + Math.ceil(Math.random() * 1000) + 2000;
    myInterval = setInterval(roll, 1);
 });
 
-function roll() {
+function disablingFunc() {
    btnSetName1.disabled = true;
    btnSetName2.disabled = true;
 
@@ -91,6 +94,15 @@ function roll() {
 
    footerEmoji.innerHTML = "🙂";
 
+   if (btn === 1 || btn === 2) {
+      btn1.disabled = true;
+      btn1000.disabled = true;
+      btnRN.disabled = true;
+      gameHeading.innerHTML = "Rolling...";
+   }
+}
+
+function roll() {
    rand1 = Math.ceil(Math.random() * 6);
    rand2 = Math.ceil(Math.random() * 6);
 
@@ -101,10 +113,10 @@ function roll() {
    if (btn === 0) {
       if (doubleRollCount > 0 && Math.abs(rand1 - rand2) != 5) {
          if (rand1 > rand2) {
-            gameHeading.innerHTML = "Round Winner: Player 1🚩";
+            gameHeading.innerHTML = "Round Winner: " + playerName1.innerHTML + "🚩";
             p1Score += 2 * (rand1 - rand2);
          } else if (rand1 < rand2) {
-            gameHeading.innerHTML = "Round Winner: Player 2🚩";
+            gameHeading.innerHTML = "Round Winner: " + playerName2.innerHTML + "🚩";
             p2Score += 2 * (rand2 - rand1);
          } else {
             gameHeading.innerHTML = "Round Winner: ⭐Draw!⭐";
@@ -112,10 +124,10 @@ function roll() {
          doubleRollCount--;
       } else if (Math.abs(rand1 - rand2) != 5) {
          if (rand1 > rand2) {
-            gameHeading.innerHTML = "Round Winner: Player 1🚩";
+            gameHeading.innerHTML = "Round Winner: " + playerName1.innerHTML + "🚩";
             p1Score += rand1 - rand2;
          } else if (rand1 < rand2) {
-            gameHeading.innerHTML = "Round Winner: Player 2🚩";
+            gameHeading.innerHTML = "Round Winner: " + playerName2.innerHTML + "🚩";
             p2Score += rand2 - rand1;
          } else {
             gameHeading.innerHTML = "Round Winner: ⭐Draw!⭐";
@@ -141,10 +153,6 @@ function roll() {
             p2Score += rand2 - rand1;
          }
       }
-      btn1.disabled = true;
-      btn1000.disabled = true;
-      btnRN.disabled = true;
-      gameHeading.innerHTML = "Rolling...";
    }
 
    cubeImg1.setAttribute("src", "images/" + rand1 + ".png");
@@ -173,9 +181,11 @@ function roll() {
       btn1000.disabled = false;
       btnRN.disabled = false;
       if (p1Score > p2Score) {
-         gameHeading.innerHTML = count / 1000 + "000th Roll Winner: Player 1🚩";
+         gameHeading.innerHTML =
+            count / 1000 + "000th Roll Winner: " + playerName1.innerHTML + "🚩";
       } else if (p1Score < p2Score) {
-         gameHeading.innerHTML = count / 1000 + "000th Roll Winner: Player 2🚩";
+         gameHeading.innerHTML =
+            count / 1000 + "000th Roll Winner: " + playerName2.innerHTML + "🚩";
       } else {
          gameHeading.innerHTML = count / 1000 + "000th Roll Winner: ⭐Draw!⭐";
       }
@@ -187,9 +197,9 @@ function roll() {
       btn1000.disabled = false;
       btnRN.disabled = false;
       if (p1Score > p2Score) {
-         gameHeading.innerHTML = "RN Roll Winner: Player 1🚩";
+         gameHeading.innerHTML = "RN Roll Winner: " + playerName1.innerHTML + "🚩";
       } else if (p1Score < p2Score) {
-         gameHeading.innerHTML = "RN Roll Winner: Player 2🚩";
+         gameHeading.innerHTML = "RN Roll Winner: " + playerName2.innerHTML + "🚩";
       } else {
          gameHeading.innerHTML = "RN Roll Winner: ⭐Draw!⭐";
       }
