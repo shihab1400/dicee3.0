@@ -40,6 +40,8 @@ var rnRand;
 var rand1;
 var rand2;
 
+var enter = 0;
+
 btnSetName1.addEventListener("click", function () {
    if (playerNameInput1.value != "") {
       playerName1.innerHTML = playerNameInput1.value;
@@ -64,19 +66,25 @@ btnReturn.addEventListener("click", function () {
 
 btn1.addEventListener("click", function () {
    btn = 0;
-   disablingFunc();
+   if (enter == 0) {
+      disablingFunc();
+   }
    roll();
 });
 
 btn1000.addEventListener("click", function () {
    btn = 1;
-   disablingFunc();
+   if (enter == 0) {
+      disablingFunc();
+   }
    myInterval = setInterval(roll, 1);
 });
 
 btnRN.addEventListener("click", function () {
    btn = 2;
-   disablingFunc();
+   if (enter == 0) {
+      disablingFunc();
+   }
    rnRand = count + Math.ceil(Math.random() * 1000) + 2000;
    myInterval = setInterval(roll, 1);
 });
@@ -94,12 +102,7 @@ function disablingFunc() {
 
    footerEmoji.innerHTML = "🙂";
 
-   if (btn === 1 || btn === 2) {
-      btn1.disabled = true;
-      btn1000.disabled = true;
-      btnRN.disabled = true;
-      gameHeading.innerHTML = "Rolling...";
-   }
+   enter = 1;
 }
 
 function roll() {
@@ -153,6 +156,10 @@ function roll() {
             p2Score += rand2 - rand1;
          }
       }
+      btn1.disabled = true;
+      btn1000.disabled = true;
+      btnRN.disabled = true;
+      gameHeading.innerHTML = "Rolling...";
    }
 
    cubeImg1.setAttribute("src", "images/" + rand1 + ".png");
