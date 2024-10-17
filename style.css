@@ -47,7 +47,7 @@ body {
    display: none;
    background-color: rgba(99, 253, 194, 0.388);
    width: 100%;
-   height: 150vh;
+   height: 100vh;
    backdrop-filter: blur(10px);
    flex-direction: column;
    align-items: center;
