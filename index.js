@@ -19,6 +19,7 @@ var counter = document.querySelector(".count");
 
 var footerEmoji = document.querySelector(".footer span");
 
+var game = document.querySelector(".game");
 var rules = document.querySelector(".rules");
 
 var btnSetName1 = document.querySelector(".btn-set-name-1");
@@ -58,10 +59,12 @@ btnSetName2.addEventListener("click", function () {
 
 btnRules.addEventListener("click", function () {
    rules.style.display = "flex";
+   game.style.overflow = "hidden";
 });
 
 btnReturn.addEventListener("click", function () {
    rules.style.display = "none";
+   game.style.overflow = "visible";
 });
 
 btn1.addEventListener("click", function () {
