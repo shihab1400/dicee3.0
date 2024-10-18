@@ -206,7 +206,7 @@ body {
 }
 
 .footer {
-   margin-top: auto;
+   margin: auto 0 0.5rem;
    color: rgba(98, 98, 98, 0.69);
    font-size: 1.2rem;
    letter-spacing: 0.1rem;
@@ -243,5 +243,18 @@ body {
 
    .rules .heading {
       font-size: 2rem;
+   }
+
+   .rules-heading {
+      font-size: 1.4rem;
+   }
+
+   .rules-item {
+      font-size: 1rem;
+   }
+
+   .btn {
+      width: 8em;
+      padding: 0.5rem;
    }
 }
