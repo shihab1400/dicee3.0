@@ -226,10 +226,22 @@ body {
    .heading {
       font-size: 2.5rem;
    }
+
+   .rules .heading {
+      font-size: 2.5rem;
+   }
+
+   .rules-heading {
+      margin: 0 0 0.5rem;
+   }
 }
 
 @media (width<600px) {
    .heading {
+      font-size: 2rem;
+   }
+
+   .rules .heading {
       font-size: 2rem;
    }
 }
